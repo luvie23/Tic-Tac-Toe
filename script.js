@@ -53,7 +53,9 @@ function chooseCell(key){
     }
     key.textContent = player
     key.classList.remove('free')
+    winCondition()
     computerMove()
+    console.log(cells[1])
 
 }
 
@@ -61,15 +63,78 @@ function chooseCell(key){
 function computerMove(){
     let freeCells = document.getElementsByClassName('free');
     let move = freeCells[Math.floor(Math.random() * freeCells.length)]
-    console.log(move)
+
     move.textContent = computer
     move.classList.remove('free')
 
 
 }
 
+const winOptions = [
+    [0,1,2],[3,4,5],[6,7,8],[0,3,6],
+    [1,4,7],[2,5,8],[0,4,8],[2,4,6]
 
+]
 //checks the win condition
-// function winCondition{
+function winCondition(){
+    for (option in winOptions){
+        for (num in winOptions[option]){
+            console.log(winOptions[option][num])
+        }
 
-// }
+    }
+}
+
+function winCondition(){
+    if (cells[0].textContent == cells[1].textContent && cells[0].textContent == cells[2].textContent && cells[0].textContent != ""){
+        if (cells[0].textContent == player){
+            console.log('Player WINS!')
+        } else {
+            console.log('Computer Wins!')
+        }
+    } else if (cells[3].textContent == cells[4].textContent && cells[3].textContent == cells[5].textContent && cells[3].textContent != "") {
+        if (cells[3].textContent == player){
+            console.log('Player WINS!')
+        } else {
+            console.log('Computer Wins!')
+        }
+    } else if (cells[6].textContent == cells[7].textContent && cells[6].textContent == cells[8].textContent && cells[6].textContent != "") {
+        if (cells[6].textContent == player){
+            console.log('Player WINS!')
+        } else {
+            console.log('Computer Wins!')
+        }
+    } else if (cells[0].textContent == cells[3].textContent && cells[0].textContent == cells[6].textContent && cells[0].textContent != "") {
+        if (cells[0].textContent == player){
+            console.log('Player WINS!')
+        } else {
+            console.log('Computer Wins!')
+        }
+    } else if (cells[1].textContent == cells[4].textContent && cells[1].textContent == cells[7].textContent && cells[1].textContent != "") {
+        if (cells[1].textContent == player){
+            console.log('Player WINS!')
+        } else {
+            console.log('Computer Wins!')
+        }
+    } else if (cells[2].textContent == cells[5].textContent && cells[2].textContent == cells[8].textContent && cells[2].textContent != "") {
+        if (cells[2].textContent == player){
+            console.log('Player WINS!')
+        } else {
+            console.log('Computer Wins!')
+        }
+    } else if (cells[0].textContent == cells[4].textContent && cells[0].textContent == cells[8].textContent && cells[0].textContent != "") {
+        if (cells[0].textContent == player){
+            console.log('Player WINS!')
+        } else {
+            console.log('Computer Wins!')
+        }
+    } else if (cells[2].textContent == cells[4].textContent && cells[2].textContent == cells[6].textContent && cells[2].textContent != ""){
+        if (cells[2].textContent == player){
+            console.log('Player WINS!')
+        } else {
+            console.log('Computer Wins!')
+        }
+    } else {
+        console.log('not yet')
+    }
+}
