@@ -62,7 +62,11 @@ header{
 }
 
 .playButton:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.selected{
+    border: 3px solid red;
 }
 
 #game-box{
@@ -93,7 +97,6 @@ header{
     width: 150px;
     background-color: white;
     border: 1px solid #a1a09d;
-    
 }
 
 .hidden{
