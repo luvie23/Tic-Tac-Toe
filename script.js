@@ -14,6 +14,7 @@ startX.addEventListener('click', function(){
     }
     startO.classList.remove('selected');
     startX.classList.add('selected');
+    won.textContent = "";
     player = "X";
     computer = "O";
     startGame('x');
@@ -25,6 +26,7 @@ startO.addEventListener('click', function(){
     }
     startX.classList.remove('selected');
     startO.classList.add('selected');
+    won.textContent = "";
     computer = "X";
     player = "O";
     startGame('o');
@@ -66,9 +68,12 @@ function chooseCell(key){
 function computerMove(){
     let freeCells = document.getElementsByClassName('free');
     let move = freeCells[Math.floor(Math.random() * freeCells.length)]
+    
     move.textContent = computer
     move.classList.remove('free')
     winCondition()
+
+    
 
 }
 
@@ -78,14 +83,7 @@ const winOptions = [
 
 ]
 //checks the win condition
-function winCondition(){
-    for (option in winOptions){
-        for (num in winOptions[option]){
-            console.log(winOptions[option][num])
-        }
 
-    }
-}
 
 function winner(winner) {
     won.classList.remove('hidden')
@@ -124,7 +122,5 @@ function winCondition(){
     } else if (cells[2].textContent == cells[4].textContent && cells[2].textContent == cells[6].textContent && cells[2].textContent != ""){
         winner(cells[2].textContent);
 
-    } else {
-        console.log('not yet')
-    }
+    } 
 }

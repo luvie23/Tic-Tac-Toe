@@ -47,7 +47,7 @@ header{
 
 .playButton{
     height:  150px;
-    width: 150px;
+    width: 170px;
     font-size: 3.5rem;
     font-weight: bold;
     border:  0;
@@ -103,4 +103,16 @@ header{
     opacity: 0;
 
     transition: opacity 0.4s ease-in-out;
+}
+
+@media only screen and (max-width: 600px){
+    #game-box{
+        height: 300px;
+        width: 300px;
+    }
+    .cell{
+        height: 100px;
+        width: 100px;
+        font-size: 5rem;
+    }
 }
