@@ -79,7 +79,7 @@ header{
     background-color:   black;
     align-items: center;
     justify-content: center;
-  
+    transition: opacity 0.4s ease-in;
 
 
 }
@@ -97,5 +97,6 @@ header{
 }
 
 .hidden{
+    opacity: 0;
     visibility: hidden;
 }
