@@ -2,6 +2,7 @@ const startX = document.getElementById('play-x');
 const startO = document.getElementById('play-o');
 const gameBox = document.getElementById('game-box');
 const cells = document.getElementsByClassName('cell');
+const won = document.getElementById('won')
 
 let player = "";
 let computer = "";
@@ -9,6 +10,7 @@ let computer = "";
 startX.addEventListener('click', function(){
     for (i = 0; i < cells.length; i++) {
         cells[i].textContent = "";
+        cells[i].classList.add('free');
     }
     startO.classList.remove('selected');
     startX.classList.add('selected');
@@ -19,6 +21,7 @@ startX.addEventListener('click', function(){
 startO.addEventListener('click', function(){
     for (i = 0; i < cells.length; i++) {
         cells[i].textContent = "";
+        cells[i].classList.add('free');
     }
     startX.classList.remove('selected');
     startO.classList.add('selected');
@@ -55,7 +58,7 @@ function chooseCell(key){
     key.classList.remove('free')
     winCondition()
     computerMove()
-    console.log(cells[1])
+    console.log(key)
 
 }
 
@@ -63,10 +66,9 @@ function chooseCell(key){
 function computerMove(){
     let freeCells = document.getElementsByClassName('free');
     let move = freeCells[Math.floor(Math.random() * freeCells.length)]
-
     move.textContent = computer
     move.classList.remove('free')
-
+    winCondition()
 
 }
 
@@ -85,55 +87,43 @@ function winCondition(){
     }
 }
 
+function winner(winner) {
+    won.classList.remove('hidden')
+    gameBox.classList.add('hidden')
+    if(winner == player) {
+        won.textContent = "You WIN!"
+        
+    } else {
+        won.textContent = "You LOST!"
+        
+    }
+}
+
 function winCondition(){
     if (cells[0].textContent == cells[1].textContent && cells[0].textContent == cells[2].textContent && cells[0].textContent != ""){
-        if (cells[0].textContent == player){
-            console.log('Player WINS!')
-        } else {
-            console.log('Computer Wins!')
-        }
+        winner(cells[0].textContent);
+
     } else if (cells[3].textContent == cells[4].textContent && cells[3].textContent == cells[5].textContent && cells[3].textContent != "") {
-        if (cells[3].textContent == player){
-            console.log('Player WINS!')
-        } else {
-            console.log('Computer Wins!')
-        }
+        winner(cells[3].textContent);
+
     } else if (cells[6].textContent == cells[7].textContent && cells[6].textContent == cells[8].textContent && cells[6].textContent != "") {
-        if (cells[6].textContent == player){
-            console.log('Player WINS!')
-        } else {
-            console.log('Computer Wins!')
-        }
+        winner(cells[6].textContent);
+
     } else if (cells[0].textContent == cells[3].textContent && cells[0].textContent == cells[6].textContent && cells[0].textContent != "") {
-        if (cells[0].textContent == player){
-            console.log('Player WINS!')
-        } else {
-            console.log('Computer Wins!')
-        }
+        winner(cells[0].textContent);
+
     } else if (cells[1].textContent == cells[4].textContent && cells[1].textContent == cells[7].textContent && cells[1].textContent != "") {
-        if (cells[1].textContent == player){
-            console.log('Player WINS!')
-        } else {
-            console.log('Computer Wins!')
-        }
+        winner(cells[1].textContent);
+
     } else if (cells[2].textContent == cells[5].textContent && cells[2].textContent == cells[8].textContent && cells[2].textContent != "") {
-        if (cells[2].textContent == player){
-            console.log('Player WINS!')
-        } else {
-            console.log('Computer Wins!')
-        }
+        winner(cells[2].textContent);
+
     } else if (cells[0].textContent == cells[4].textContent && cells[0].textContent == cells[8].textContent && cells[0].textContent != "") {
-        if (cells[0].textContent == player){
-            console.log('Player WINS!')
-        } else {
-            console.log('Computer Wins!')
-        }
+        winner(cells[0].textContent);
+
     } else if (cells[2].textContent == cells[4].textContent && cells[2].textContent == cells[6].textContent && cells[2].textContent != ""){
-        if (cells[2].textContent == player){
-            console.log('Player WINS!')
-        } else {
-            console.log('Computer Wins!')
-        }
+        winner(cells[2].textContent);
+
     } else {
         console.log('not yet')
     }
