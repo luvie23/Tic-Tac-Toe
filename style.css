@@ -13,7 +13,7 @@ body{
 
 header{
     height: 20%;
-    background-color: aquamarine;
+    background-color: #93a685;
 }
 
 #main-container{
@@ -21,16 +21,48 @@ header{
     flex-direction: column;
     padding: 0;
     align-items: center;
-
     height: 80%;
-    background-color: blanchedalmond;
+    background-color: #a4b995;
 
 }
 
 #menu{
-    height: 200px;
-    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 250px;
+    background-color: #edffe1
+    ;
     width: 100%;
+
+
+}
+
+#menu>div{
+    display: flex;
+    gap: 30px;
+}
+
+.playButton{
+    height:  150px;
+    width: 150px;
+    font-size: 3.5rem;
+    font-weight: bold;
+    border:  0;
+    color: #35423d;
+    background-color: #a0a282;
+    border-radius: 20%;
+    transition:  transform 125ms ease-in;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.playButton:hover{
+    transform: scale(1.1);
 }
 
 #game-box{
@@ -47,6 +79,7 @@ header{
     background-color:   black;
     align-items: center;
     justify-content: center;
+  
 
 
 }
@@ -59,5 +92,10 @@ header{
     height: 150px;
     width: 150px;
     background-color: white;
+    border: 1px solid #a1a09d;
     
+}
+
+.hidden{
+    visibility: hidden;
 }
