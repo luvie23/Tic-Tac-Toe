@@ -1,0 +1,53 @@
+html{
+    height: 100%;
+    font: 14px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Kanit', sans-serif;
+    height: 100%;
+}
+
+header{
+    height: 20%;
+    background-color: aquamarine;
+}
+
+#main-container{
+    display: flex   ;
+    align-items: center;
+    justify-content: center ;
+    height: 80%;
+    background-color: blanchedalmond;
+
+}
+
+#game-box{
+    display: grid;
+    grid-template:
+    'cell-1 cell-2 cell-3'
+    'cell-4 cell-5 cell-6'
+    'cell-7 cell-8 cell-9';
+    gap: 2px;
+    height: 470px;
+    width: 465px;
+    background-color:   black;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.cell{
+    font-size: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    
+}
